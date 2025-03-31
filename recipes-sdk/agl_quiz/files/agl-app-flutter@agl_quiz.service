@@ -1,0 +1,19 @@
+[Unit]
+Description=agl_quiz
+
+#[Unit]
+#Requires=agl-compositor.service applaunchd.service agl-persistent-storage-api.service
+#After=agl-compositor.service applaunchd.service agl-persistent-storage-api.service
+
+
+[Service]
+Type=simple
+User=agl-driver
+EnvironmentFile=/etc/default/flutter
+Environment=XDG_RUNTIME_DIR=/run/user/1001/
+ExecStart=/usr/bin/flutter-auto -b /usr/share/flutter/agl_quiz/${FLUTTER_VERSION}/${FLUTTER_RUNTIME} --xdg-shell-app-id agl_quiz
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
+
