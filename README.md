@@ -1,7 +1,8 @@
 # Project Structure
 
 ```
-.
+meta-agl-quiz
+│
 ├── conf
 │   ├── files
 │   │   └── packages.inc     # Packages to be installed on the image
